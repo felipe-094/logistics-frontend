@@ -73,3 +73,7 @@ export default defineConfig([
 ])
 
 ```
+
+## Flujo de ramas
+
+El desarrollo del frontend se gestiona mediante las ramas `dev`, `test` y `main`.
