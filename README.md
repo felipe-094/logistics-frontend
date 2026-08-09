@@ -1,79 +1,66 @@
-# React + TypeScript + Vite
+# Gestión de Envíos y Rutas Logísticas — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend de una plataforma web para la gestión logística de envíos, rutas y transportistas.
 
-Currently, two official plugins are available:
+La aplicación permite a los usuarios autenticarse, registrar envíos, consultar el estado de sus pedidos y, para los usuarios administradores, gestionar rutas, transportistas y consultar reportes logísticos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tecnologías utilizadas
 
-## React Compiler
+- React
+- TypeScript
+- Vite
+- React Router
+- Axios
+- Tailwind CSS
+- Recharts
+- ESLint
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funcionalidades
 
-## Expanding the ESLint configuration
+### Autenticación
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Registro de usuarios.
+- Inicio de sesión.
+- Manejo de autenticación mediante JWT.
+- Protección de rutas según autenticación y rol.
+- Persistencia del token en el navegador.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Gestión de envíos
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Creación de nuevos envíos.
+- Consulta de envíos.
+- Visualización del estado del envío.
+- Seguimiento del proceso de entrega.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Gestión administrativa
 
-```
+- Dashboard administrativo.
+- Gestión de transportistas.
+- Gestión de rutas.
+- Asignación de rutas a envíos.
+- Asignación de transportistas.
+- Filtrado de envíos por estado.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Reportes
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Consulta de reportes de envíos.
+- Filtros de información.
+- Visualización de métricas logísticas.
+- Gráficos para facilitar el análisis de información.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Requisitos previos
 
-```
+Antes de ejecutar el proyecto se requiere tener instalado:
 
-## Flujo de ramas
+- Node.js
+- npm
+- Git
 
-El desarrollo del frontend se gestiona mediante las ramas `dev`, `test` y `main`.
+El backend de la aplicación debe estar ejecutándose para poder realizar las operaciones que requieren comunicación con la API.
+
+## Instalación
+
+Clonar el repositorio:
+
+```bash
+git clone https://github.com/felipe-094/logistics-frontend.git
